@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magenuts Pvt Ltd.
+ * Magenuts Advanced Sorting Extension
+ * 
+ * @category   Magenuts
+ * @package    Magenuts_AdvancedSorting
+ * @copyright  Copyright © 2019 Magenuts (https://www.magenuts.com)
+ * @license    https://www.magenuts.com/magento-extension-license.txt/
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+    <menu>
+        <add id="Magenuts_AdvancedSorting::advancedsorting" title="Magenuts Advanced Sorting" 
+             parent="Magenuts_Core::menu" module="Magenuts_AdvancedSorting" sortOrder="5" 
+             resource="Magenuts_AdvancedSorting::advancedsorting"/>
+        <add id="Magenuts_AdvancedSorting::advancedsortingsection" title="Configuration" 
+             module="Magenuts_AdvancedSorting" sortOrder="10" parent="Magenuts_AdvancedSorting::advancedsorting" 
+             action="adminhtml/system_config/edit/section/advancedsortingsection" resource="Magenuts_AdvancedSorting::advancedsortingsection"/>
+    </menu>
+</config>
