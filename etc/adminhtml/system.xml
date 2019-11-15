@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magenuts Pvt Ltd.
+ * Magenuts Advanced Sorting Extension
+ * 
+ * @category   Magenuts
+ * @package    Magenuts_AdvancedSorting
+ * @copyright  Copyright © 2019 Magenuts (https://www.magenuts.com)
+ * @license    https://www.magenuts.com/magento-extension-license.txt/
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Config/etc/system_file.xsd">
+    <system>
+        <!-- Advanced Sorting Section -->
+        <section id="advancedsortingsection" translate="label" type="text" sortOrder="320" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Advanced Sorting</label>
+            <!-- Assign section to tab -->
+            <tab>magenuts</tab>
+            <resource>Magenuts_AdvancedSorting::advancedsorting_config</resource>
+            <!-- General Group -->
+            <group id="advancedsortinggroup" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <!-- Enable Module -->
+                <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[Select Yes to enable module on frontend.]]></comment>
+                </field>
+                <!-- Select Sort Option -->
+                <field id="sorting_option" translate="label" type="multiselect" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Select Sort Option</label>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                    <source_model>Magenuts\AdvancedSorting\Model\System\Config\Source\SortOption</source_model>
+                    <comment><![CDATA[Select multilple sort options to display in sort by dropdown in frontside.<br />For windows: Hold down the control (ctrl) button to select multiple options<br />For Mac: Hold down the command button to select multiple options]]></comment>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
